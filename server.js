@@ -38,6 +38,8 @@ io.on('connection', function(socket){
 
   console.log('a user connected');
 
+  socket.emit('LEDStateChange', led.readSync());
+
   socket.on('led', function() {
     console.log('led emit');
 
