@@ -9,18 +9,14 @@ var Gpio            = require('onoff').Gpio;
 var server          = require('http').createServer(app);
 var io              = require('socket.io')(server);
 
-
-// configuration ===========================================
+// Pi GPIO
+var led             = new Gpio(17, 'out');
 
 // config files
 var db = require('./config/db');
 
 // set our port
 var port = process.env.PORT || 8080;
-
-// connect to our mongoDB database
-// (uncomment after you enter in your own credentials in config/db.js)
-// mongoose.connect(db.url);
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json
@@ -44,6 +40,17 @@ io.on('connection', function(socket){
 
   socket.on('led', function() {
     console.log('led emit');
+
+    var iv = setInterval(function(){
+      led.writeSync(led.readSync() === 0 ? 1 : 0)
+    }, 500);
+
+    // Stop blinking the LED and turn it off after 5 seconds.
+    setTimeout(function() {
+      clearInterval(iv); // Stop blinking
+      led.writeSync(0);  // Turn LED off.
+      led.unexport();    // Unexport GPIO and free resources
+    }, 5000);
   });
 });
 
