@@ -39,7 +39,12 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
 io.on('connection', function(socket){
+
   console.log('a user connected');
+
+  socket.on('led', function() {
+    console.log('led emit');
+  });
 });
 
 // routes ==================================================
