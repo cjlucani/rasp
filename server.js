@@ -6,8 +6,11 @@ var app             = express();
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
 var Gpio            = require('onoff').Gpio;
-var http            = require('http').Server(app);
-var io              = require('socket.io')(http);
+// var http            = require('http').Server(app);
+// var io              = require('socket.io')(http);
+var server          = require('http').createServer(app);
+var io              = require('socket.io')(server);
+
 
 // configuration ===========================================
 
@@ -46,7 +49,7 @@ require('./app/routes')(app, Gpio); // configure our routes
 
 // start app ===============================================
 // startup our app at http://localhost:8080
-app.listen(port);
+server.listen(port);
 
 // shoutout to the user
 console.log('Magic happens on port ' + port);
