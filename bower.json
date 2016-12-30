@@ -1,0 +1,24 @@
+{
+  "name": "cavicapture",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Chris Lucani <chrislucani@yahoo.co.uk>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+      "bootstrap": "latest",
+      "font-awesome": "latest",
+      "animate.css": "latest",
+      "angular": "latest",
+      "angular-route": "latest"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "cavicapture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.4.2",
+    "express": "~4.5.1",
+    "method-override": "~2.0.2",
+    "mongoose": "~3.8.0",
+    "onoff": "^1.1.1"
+  }
+}
