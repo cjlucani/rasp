@@ -6,6 +6,7 @@ var app             = express();
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
 var Gpio            = require('onoff').Gpio;
+var http            = require('http').Server(app);
 var io              = require('socket.io')(http);
 
 // configuration ===========================================
