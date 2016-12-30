@@ -8,6 +8,6 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       controller: 'MainController'
     })
 
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 
 }]);
