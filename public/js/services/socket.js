@@ -1,3 +1,3 @@
-factory('socket', function (socketFactory) {
+angular.module('Factories', []).factory('socket', function (socketFactory) {
   return socketFactory();
 });
