@@ -23,24 +23,20 @@
 <body ng-app="sampleApp">
 <div class="container">
 
-    <!-- HEADER -->
     <nav class="navbar navbar-inverse">
         <div class="navbar-header">
             <a class="navbar-brand" href="/">Cavicapture</a>
         </div>
     </nav>
 
-    <!-- ANGULAR DYNAMIC CONTENT -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div ng-view></div>
-        </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div ng-view></div>
       </div>
     </div>
 
 </div>
-<script src="libs/socket-io/socket.io.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 <script>
   var socket = io();
 </script>
