@@ -1,11 +1,11 @@
 // public/js/controllers/MainCtrl.js
 angular.module('MainCtrl', []).controller('MainController', function($scope, socket) {
 
-  $state.LEDState = false;
+  $scope.LEDState = false;
 
   socket.on('LEDStateChange', function(newState) {
     console.log('LEDStateChange', newState);
-    $state.LEDState = newState;
+    $scope.LEDState = newState;
   })
 
   $scope.updateLED = function() {
