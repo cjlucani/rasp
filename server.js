@@ -6,6 +6,7 @@ var app             = express();
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
 var Gpio            = require('onoff').Gpio;
+var io              = require('socket.io')(http);
 
 // configuration ===========================================
 
@@ -34,6 +35,10 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 
 // set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
 
 // routes ==================================================
 require('./app/routes')(app, Gpio); // configure our routes

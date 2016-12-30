@@ -13,6 +13,7 @@
     "express": "~4.5.1",
     "method-override": "~2.0.2",
     "mongoose": "~3.8.0",
-    "onoff": "^1.1.1"
+    "onoff": "^1.1.1",
+    "socket.io": "^1.7.2"
   }
 }
