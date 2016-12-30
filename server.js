@@ -46,7 +46,7 @@ io.on('connection', function(socket){
     var state = led.readSync();
 
     led.writeSync(Number(!state));
-    socket.emit('LEDStateChange', !state);
+    io.sockets.emit('LEDStateChange', !state);
 
   });
 });
